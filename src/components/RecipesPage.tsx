@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import Frame329 from '../imports/Frame329';
-import Frame332 from '../imports/Frame332';
+import Frame33228458 from '../imports/Frame332-28-458';
 import VoteComponent from '../imports/1';
 
 export default function RecipesPage() {
@@ -34,7 +34,7 @@ export default function RecipesPage() {
       </div>
 
       {/* Content */}
-      <Frame332 />
+      <Frame33228458 />
     </div>
   );
 }

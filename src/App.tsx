@@ -12,6 +12,7 @@ import MyPage from './components/MyPage';
 import AIChatPage from './components/AIChatPage';
 import BreadTourPage from './components/BreadTourPage';
 import BreadTourMembersPage from './components/BreadTourMembersPage';
+import CreatePostPage from './components/CreatePostPage';
 
 function ProtectedRoute({ children }: { children: React.ReactNode }) {
   return isLoggedIn() ? <>{children}</> : <Navigate to="/login" replace />;
@@ -40,6 +41,7 @@ export default function App() {
             <Route path="/ai-chat" element={<AIChatPage />} />
             <Route path="/bread-tour" element={<BreadTourPage />} />
             <Route path="/bread-tour-members" element={<BreadTourMembersPage />} />
+            <Route path="/create-post" element={<CreatePostPage />} />
           </Route>
 
           {/* Fallback */}

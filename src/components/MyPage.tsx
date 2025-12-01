@@ -768,9 +768,7 @@ export default function MyPage() {
   };
 
   return (
-    <div className="bg-white relative w-[402px] min-h-screen overflow-y-auto pb-[150px] flex flex-col">
-      <BarsStatusBarIPhoneLight />
-      <Frame25 onLogout={handleLogout} />
+    <div className="bg-white relative w-[402px] min-h-screen overflow-y-auto pb-[150px] pt-[84px] flex flex-col">
       <div className="relative content-stretch flex flex-col items-start w-full">
         <Frame33 name={user?.name || '달달한허니빵'} gender={user?.gender || '방조아님'} nickname={user?.nickname || 'zzoa_bbang'} />
         <Frame34 />

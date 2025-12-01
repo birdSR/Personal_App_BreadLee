@@ -1,4 +1,3 @@
-import "../index.css";
 import { useRef, useState } from "react";
 import imgFrame275 from "figma:asset/55292a243c147c2beae549eb98fa149d313dd5d3.png";
 
@@ -18,7 +17,7 @@ function BreadCard({ rank, name, shop, image }: BreadCardProps) {
           <img alt="" className="absolute left-[-9.19%] max-w-none size-[113.24%] top-[-8.13%]" src={image} />
         </div>
       </div>
-
+      
       {/* Rank */}
       <div className="absolute flex flex-col font-['YES_Gothic:ExtraBold',sans-serif] justify-center leading-[0] left-[13px] not-italic text-[#f47f30] text-[24px] text-nowrap top-[19.5px] tracking-[-0.24px] translate-y-[-50%]">
         <p className="[text-underline-position:from-font] decoration-solid leading-[1.7] underline whitespace-pre">{rank}</p>
@@ -107,7 +106,7 @@ export default function HotBreadSection() {
       </div>
 
       {/* Horizontal Scroll Container */}
-      <div
+      <div 
         ref={scrollRef}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
@@ -115,15 +114,13 @@ export default function HotBreadSection() {
         onMouseLeave={handleMouseLeave}
         className={`overflow-x-auto overflow-y-hidden scrollbar-hide ${isDragging ? 'cursor-grabbing' : 'cursor-grab'}`}
         style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
           WebkitOverflowScrolling: 'touch',
           touchAction: 'pan-x'
         }}
       >
         <div className="flex gap-[16px] pr-[20px] select-none">
           {breads.map((bread, index) => (
-            <BreadCard
+            <BreadCard 
               key={index}
               rank={bread.rank}
               name={bread.name}
@@ -133,16 +130,6 @@ export default function HotBreadSection() {
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -webkit-overflow-scrolling: touch;
-          scroll-snap-type: x proximity;
-        }
-      `}</style>
     </div>
   );
 }

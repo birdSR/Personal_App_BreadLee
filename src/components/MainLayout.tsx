@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import DockBar from './DockBar';
 import TopNavBar from './TopNavBar';
+import CreatePostButton from './CreatePostButton';
 
 function Battery() {
   return (
@@ -54,6 +55,8 @@ export default function MainLayout() {
     switch (location.pathname) {
       case '/recipes':
         return '핫-빵';
+      case '/reviews':
+        return '핫-빵';
       case '/bread-map':
         return '빵맵';
       case '/mypage':
@@ -69,21 +72,36 @@ export default function MainLayout() {
     }
   };
 
+  // 핫-빵 페이지인지 확인
+  const isHotBreadPage = location.pathname === '/recipes' || location.pathname === '/reviews';
+
+  // 글작성 페이지인지 확인
+  const isCreatePostPage = location.pathname === '/create-post';
+
   return (
     <div className="bg-white relative size-full flex flex-col overflow-x-hidden">
       {/* Top Status Bar */}
       <TopIcon />
 
-      {/* Top Navigation Bar */}
-      <TopNavBar title={getPageTitle()} />
+      {/* Top Navigation Bar - 글작성 페이지에서는 숨김 */}
+      {!isCreatePostPage && <TopNavBar title={getPageTitle()} />}
 
       {/* Main Content */}
       <div className="flex-1 overflow-y-auto overflow-x-hidden">
         <Outlet />
       </div>
 
-      {/* Dock Bar */}
-      <DockBar />
+      {/* Create Post Button - 핫-빵 페이지에서만 표시 */}
+      {isHotBreadPage && (
+        <div className="absolute bottom-0 h-[163px] left-0 w-full pointer-events-none z-40">
+          <div className="absolute content-stretch flex flex-col gap-[4px] items-center right-[20px] top-0 pointer-events-auto">
+            <CreatePostButton />
+          </div>
+        </div>
+      )}
+
+      {/* Dock Bar - 글작성 페이지에서는 숨김 */}
+      {!isCreatePostPage && <DockBar />}
     </div>
   );
 }
