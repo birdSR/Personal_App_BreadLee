@@ -1,4 +1,9 @@
+@import url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/YESGothic.woff2') format('woff2');
 @custom-variant dark (&:is(.dark *));
+
+html, body {
+  font-family: 'YES_Gothic', sans-serif;
+}
 
 :root {
   --font-size: 16px;

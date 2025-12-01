@@ -26,7 +26,7 @@ export default function HomePage() {
             <PassionMeter percentage={80} />
           </div>
           <div className="h-[109px]">
-            <BreadSentimentCard sentiment="유럽\n소도시" />
+            <BreadSentimentCard sentiment="유럽 소도시" />
           </div>
         </div>
 
