@@ -1,0 +1,5 @@
+# PWA manifest & service worker는 리다이렉트 제외
+/manifest.json  /manifest.json  200
+/service-worker.js  /service-worker.js  200
+
+/*    /index.html   200
