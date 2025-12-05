@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+
 import { isLoggedIn } from './utils/localStorage';
 import LoginPage from './components/LoginPage';
 import SignupFlow from './components/SignupFlow';
@@ -24,6 +25,7 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           {/* Redirect root to login */}
+
           <Route path="/" element={<Navigate to="/login" replace />} />
 
           {/* Public Routes */}
@@ -45,7 +47,9 @@ export default function App() {
           </Route>
 
           {/* Fallback */}
-          <Route path="*" element={<Navigate to="/login" replace />} />
+          {/* <Route path="*" element={<Navigate to="/login" replace />} /> */}
+          <Route path="/manifest.json" element={null} />
+          <Route path="/favicon.ico" element={null} />
         </Routes>
       </BrowserRouter>
     </div>
